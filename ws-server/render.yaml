@@ -1,0 +1,29 @@
+###############################################################################
+# Render Blueprint — ws-chat-server
+#
+# Deploy:
+#   1. Push this folder to a Git repository (GitHub / GitLab).
+#   2. In the Render dashboard:  New → Blueprint  →  select the repository.
+#   3. Render reads this file and provisions the Web Service automatically.
+#
+# Build:  npm install
+# Start:  npm start
+#
+# NOTE: If this folder lives inside a larger (mono)repo instead of being the
+# repo root, uncomment the `rootDir` line below so Render runs the commands
+# from this directory.
+###############################################################################
+
+services:
+  - type: web
+    name: ws-chat-server
+    runtime: node          # Node.js Web Service
+    plan: free             # upgrade to "starter" (or higher) for always-on
+    region: oregon         # any Render region works
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /     # server.js answers GET / with a 200 JSON status
+    autoDeploy: true
+    # rootDir: ws-server   # <- uncomment for monorepo layouts only
+
+# Render injects PORT automatically; server.js falls back to 8080 locally.
