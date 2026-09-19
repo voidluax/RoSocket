@@ -1,0 +1,24 @@
+{
+  "name": "ws-chat-server",
+  "version": "1.0.0",
+  "description": "Single-room (\"main\") WebSocket broadcast server with a server-controlled developer flag. Deployable on Render as a Web Service.",
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "keywords": [
+    "websocket",
+    "ws",
+    "chat",
+    "render",
+    "broadcast",
+    "realtime"
+  ]
+}
